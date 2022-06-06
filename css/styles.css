@@ -2,7 +2,6 @@ html {
   box-sizing: border-box;
 }
 
-
 :root {
   --link-color: #2196f3;
   --title-color: #212121;
@@ -15,28 +14,43 @@ html {
 body {
   font-family: Roboto, serif;
   color: var(--title-color);
+  width: 1600px;
 }
 
 h1, h2, h3, h4, h5, h6, p {
-margin-top: 0;
-margin-bottom: 0;
-}
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-    /* padding-left: 15px;
-  padding-right: 15px; */
-  outline: 1px solid greenyellow;
+margin: 0;
 }
 
 ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-left: 0;
 }
 
+img {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  outline: 1px solid rgb(153, 51, 51);
+}
 
 
 .link,
@@ -46,13 +60,23 @@ ul {
   color: var(--link-color);
 }
 
-.header-link {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: inherit;
+
+/* ----------------HEADER--------------------- */
+
+.header {
+  padding: 32px;
 }
+
+.header-list {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
 
 .logo {
   font-family: 'Raleway';
@@ -72,10 +96,25 @@ ul {
   color: #000000;
 }
 
+.header-logo {
+  margin-right: 93px;
+}
+
 .logo-studio-footer {
   color: #ffffff;
 }
 
+.header-list-item:not(:last-child) {
+margin-right: 50px;
+}
+
+.header-link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: inherit;
+}
 .header-mail,
 .header-tel {
   font-weight: 500;
@@ -84,6 +123,18 @@ ul {
   letter-spacing: 0.02em;
   color: var(--text-color);
 }
+
+.header-mail {
+  margin-right: 50px;
+}
+
+.header-contacts {
+  margin-left: auto;
+}
+
+/* ---------------------HERO--------------------- */
+
+
 .hero {
   background: #2f303a;
   text-align: center;
@@ -103,15 +154,17 @@ ul {
   margin-top: 0;
   margin-bottom: 20px;
   width: 696px; 
+  margin-left: 0;
 }
 
 .hero-btn {
+  min-width: 200px;
+  height: 50px;
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
@@ -120,18 +173,34 @@ ul {
   cursor: pointer;
   border-radius: 4px;
   padding: 11px 32px;
-  min-width: 200px;
-  border: 0px;
+  
+  border: 1px solid transparent;
 }
 .hero-btn:hover {
   background: #188ce8;
 }
 
+/* ---------------------ABOUT--------------------- */
+
 .about {
-  /* padding: 94px auto; */
-  background-color: aquamarine;
+  padding: 94px;
 }
 
+.about.container{
+  display: flex;
+}
+
+.about-list {
+  display: flex;
+  margin-left: -30px;
+}
+
+.about-item{
+  flex-basis: calc((100%-90px)/4);
+  margin-left: 30px;
+}
+
+.about-item
 .about-list-title {
   font-weight: 700;
   font-size: 14px;
@@ -147,7 +216,12 @@ ul {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--text-color);
-  padding-bottom: 94px;
+}
+
+/* ---------------------WORK--------------------- */
+
+.work {
+  padding: 94px 200px;
 }
 
 .work-title,
@@ -160,10 +234,37 @@ ul {
   color: inherit;
   margin-bottom: 50px;
 }
+
+.work-list {
+  display: flex;
+}
+
+
+.work-list-item +.work-list-item {
+  margin-left: 30px;
+}
+
+/* ---------------------TEAM--------------------- */
+
 .team {
   background: #f5f4fa;
-  padding: 94px 215px;
+  padding: 94px 200px;
 }
+
+.team-list {
+  display: flex;
+  margin-left: -30px;
+}
+
+.team-list-item{
+  flex-basis: calc(100%/4-30px);
+  margin-left: 30px;
+}
+
+/* .team-list-item +.team-list-item {
+  margin-left: 30px;
+} */
+
 .team-list-name {
   font-weight: 500;
   font-size: 16px;
@@ -179,6 +280,8 @@ ul {
   letter-spacing: 0.03em;
   color: var(--text-color);
 }
+
+/* ---------------------FOTTER--------------------- */
 
 .footer {
   background: var(--footer-background);
@@ -207,7 +310,7 @@ ul {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* PORTFOLIO */
+/*--------------------------PORTFOLIO--------------------- */
 
 .portfolio-btn-item {
   font-family: inherit;
